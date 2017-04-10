@@ -1,0 +1,94 @@
+/* ---------------------------------------- */
+/* Page */
+/* ---------------------------------------- */
+*{font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.well{margin:80px auto;padding:30px 15px;}
+
+/* ---------------------------------------- */
+/* SVG */
+/* ---------------------------------------- */
+#tap-game {width:100%;height:300px;background:#282828;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;font-size:20px;}
+#tap-game .center{-ms-transform:translateX(50%);-webkit-transform:translateX(50%);transform:translateX(50%);}
+#tap-game .center-25{-ms-transform:translateX(25%);-webkit-transform:translateX(25%);transform:translateX(25%);}
+#tap-game .center-75{-ms-transform:translateX(75%);-webkit-transform:translateX(75%);transform:translateX(75%);}
+#tap-game .invert{-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+
+#tap-game .color-white{fill:#fff;}
+#tap-game .color-gray{fill:#888;}
+#tap-game .color-green{fill:#77b300;}
+#tap-game .color-blue{fill:#2a9fd6;}
+#tap-game .color-purple{fill:#9933cc;}
+#tap-game .color-orange{fill:#ff8800;}
+#tap-game .color-red{fill:#cc0000;}
+
+#tap-game .title{font-size:40px;}
+#tap-game .small{font-size:20px;}
+#tap-game .smaller{font-size:15px;}
+
+/* tap-title */
+#tap-game .btn-init{cursor:pointer;}
+#tap-game .btn-init>rect{fill:#2a9fd6;stroke-width:2;stroke:#1f79a3}
+#tap-game .btn-init:active>rect,
+#tap-game .btn-init:hover>rect{fill:#2180ac;}
+#tap-game .btn-init>text{fill:#fff;font-size:18px;}
+
+/* start, wait */
+#tap-game .screen-click{font-size:30px;}
+#tap-game .screen-click>*{cursor:pointer;}
+#tap-game .screen-click:active>*,
+#tap-game .screen-click:hover>*{opacity:0.95;}
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+
+.tap-screen{width:100%;height:310px;border-radius:4px;cursor:pointer;display:inline-block;}
+.tap-screen-text{margin:0 auto;width:90%; font-size:large;}
+.bg-default{cursor:unset;background-color:#282828;}
+
+.tap-screen h3{font-size:40px;}
+.tap-screen h4{font-size:32px;}
+.tap-screen h5{font-size:20px;}
+
+.tap-screen>.tap{padding-top:100px;}
+.tap-screen>.trap{padding-top:100px;}
+.tap-screen.four-div{width:50%;height:155px;}
+.tap-screen.four-div h3{font-size:30px;}
+.tap-screen.four-div>.tap, 
+.tap-screen.four-div>.trap{padding-top:42px;}
+.tap-screen.nine-div{width:33.333%;height:103.333px;}
+.tap-screen.nine-div h3{font-size:20px;}
+.tap-screen.nine-div>.tap, 
+.tap-screen.nine-div>.trap{padding-top:22px;}
+
+/*.tap-screen.two-div h3{font-size:5vmin;}
+.tap-screen.four-div h3{font-size:4vmin;}*/
+
+.tap-screen>.continuing-time{padding-top:96px;}
+.tap-screen>.intial{padding-top:58px;}
+.tap-screen>.intial-start{padding-top:106px;}
+.tap-screen>.continuing{padding-top:106px;}
+.tap-screen>.wait{padding-top:72px;}
+.tap-screen>.danger{padding-top:86px;}
+.tap-screen>.gameover{padding-top:100px;}
+.tap-screen>.end{padding-top:30px;}
+
+@media (max-width: 500px){
+	.tap-screen h3{font-size:34px;}
+	.tap-screen h4{font-size:28px;}
+	.tap-screen h5{font-size:18px;}
+	
+	.tap-screen>.tap, .tap-screen>.trap, .tap-screen>.gameover{padding-top:106px;}
+	.tap-screen.four-div h3{font-size:22px;}
+	.tap-screen.four-div>.tap, 
+	.tap-screen.four-div>.trap{padding-top:46px;}
+	.tap-screen.nine-div h3{font-size:16px;}
+	.tap-screen.nine-div>.tap, 
+	.tap-screen.nine-div>.trap{padding-top:24px;}
+
+	.tap-screen>.continuing-time{padding-top:106px;}
+	.tap-screen>.intial{padding-top:68px;}
+	.tap-screen>.intial-start, .tap-screen>.continuing{padding-top:116px;}	
+	.tap-screen>.wait, .tap-screen>.danger{padding-top:72px;}
+	.tap-screen>.end{padding-top:38px;}
+	
+}

@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>TapAI!</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../assets/js/jquery-1.12.3.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- Math functions -->
+<script src="../assets/js/math/random.js"></script>
+<script src="../assets/js/math/round.js"></script>
+
+<!-- TapAI Game -->
+<script src="../dist/js/TapAI/layout.js"></script>
+<script src="../dist/js/TapAI/logic.js"></script>
+<script src="../dist/js/TapAI/game.js"></script>
+
+<!-- To Save CSV -->
+<script src="../assets/js/FileSaver.min.js"></script>
+<script src="../dist/js/TapAI/toFile.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<div class="row">
+<div class="col-sm-offset-3 col-sm-6">
+<div class="well">
+
+	<svg id="tap-game"></svg>
+	
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+var tapelement = document.getElementById('tap-game');
+var game = new TapAI(tapelement);
+
+</script>
+
+</div>
+</body>
+</html>

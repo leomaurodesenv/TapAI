@@ -1,0 +1,210 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>TapAI!</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../assets/js/jquery-1.12.3.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<div class="row">
+<div class="col-sm-offset-3 col-sm-6">
+<div class="well">
+
+	<svg id="tap-game"></svg>
+	
+	<!-- Init 
+	<svg id="tap-game">
+		<text class="center" y="120">
+			<tspan class="title color-white" x="0" text-anchor="middle">TapAI!</tspan>
+			<tspan class="color-gray" x="0" dy="40" text-anchor="middle">Teste sua velocidade</tspan>
+		</text>
+		<g class="btn-init center">
+			<rect x="-55" y="180" width="110" height="40" rx="10" ry="10"/>
+			<text y="205" text-anchor="middle">Começar</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Start 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-green" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="140" text-anchor="middle">
+				<tspan class="color-white" x="0">Clique para</tspan>
+				<tspan class="color-white" x="0" dy="40">Começar !</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Wait 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-green" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="50%" text-anchor="middle">
+				<tspan class="color-white" x="0">Espere &#8987;</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Tap 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-blue" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="50%" text-anchor="middle">
+				<tspan class="color-white" x="0">&raquo; Tap &laquo;</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Tap & Trap (2x) 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-blue" x="0" y="0" width="50%" height="100%" rx="10" ry="10"/>
+			<text class="center-25" y="50%" text-anchor="middle">
+				<tspan class="color-white" x="0">&raquo; Tap &laquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="0" width="50%" height="100%" rx="10" ry="10"/>
+			<text class="center-75" y="50%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Tap & Trap (4x) 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-blue" x="0" y="0" width="50%" height="50%" rx="10" ry="10"/>
+			<text class="center-25" y="25%" text-anchor="middle">
+				<tspan class="color-white" x="0">&raquo; Tap &laquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="0" width="50%" height="50%" rx="10" ry="10"/>
+			<text class="center-75" y="25%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="0" y="50%" width="50%" height="50%" rx="10" ry="10"/>
+			<text class="center-25" y="75%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="50%" width="50%" height="50%" rx="10" ry="10"/>
+			<text class="center-75" y="75%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Tap & Trap (6x) 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-blue" x="0" y="0" width="50%" height="33%" rx="10" ry="10"/>
+			<text class="center-25" y="20%" text-anchor="middle">
+				<tspan class="color-white" x="0">&raquo; Tap &laquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="0" width="50%" height="33%" rx="10" ry="10"/>
+			<text class="center-75" y="20%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="0" y="33%" width="50%" height="33%" rx="10" ry="10"/>
+			<text class="center-25" y="53%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="33%" width="50%" height="33%" rx="10" ry="10"/>
+			<text class="center-75" y="53%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="0" y="66%" width="50%" height="34%" rx="10" ry="10"/>
+			<text class="center-25" y="86%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+		<g class="screen-click">
+			<rect class="color-purple" x="50%" y="66%" width="50%" height="34%" rx="10" ry="10"/>
+			<text class="center-75" y="86%" text-anchor="middle">
+				<tspan class="color-white" x="0">&lsaquo; Trap &rsaquo;</tspan>
+			</text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Error 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-orange" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="120"><tspan class="color-white" x="0" text-anchor="middle">&#10007; Calma &#10007;</tspan></text>
+			<text class="center" y="155"><tspan class="small color-white" x="0" text-anchor="middle">Não tenha pressa..</tspan></text>
+			<text class="center" y="185"><tspan class="smaller color-white" x="0" text-anchor="middle">Clique para continuar</tspan></text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Game Over 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-red" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="120"><tspan class="color-white" x="0" text-anchor="middle">&#10008; Fim &#10008;</tspan></text>
+			<text class="center" y="150"><tspan class="smaller color-white" x="0" text-anchor="middle">Clique para continuar</tspan></text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- Show Time 
+	<svg id="tap-game">
+		<g class="screen-click">
+			<rect class="color-green" x="0" y="0" width="100%" height="100%" rx="10" ry="10"/>
+			<text class="center" y="140"><tspan class="color-white" x="0" text-anchor="middle">&#9656; 460 ms &#9666;</tspan></text>
+			<text class="center" y="175"><tspan class="small color-white" x="0" text-anchor="middle">Clique para continuar</tspan></text>
+		</g>
+	</svg>
+	-->
+	
+	<!-- End 
+	<svg id="tap-game"id="tap-game">
+		<text class="center" y="60">
+			<tspan class="title color-white" x="0" text-anchor="middle">TapAI!</tspan>
+			<tspan class="color-gray" x="0" dy="50" text-anchor="middle">Rodadas: 10</tspan>
+			<tspan class="color-gray" x="0" dy="30" text-anchor="middle">Melhor: 320 ms</tspan>
+			<tspan class="color-gray" x="0" dy="30" text-anchor="middle">Pior: 2320 ms</tspan>
+			<tspan class="color-gray" x="0" dy="30" text-anchor="middle">Pontos: 2320</tspan>
+		</text>
+		<g class="btn-init center">
+			<rect x="-55" y="230" width="110" height="40" rx="10" ry="10"/>
+			<text y="255" text-anchor="middle">Denovo ?</text>
+		</g>
+	</svg>
+	-->
+	
+</div>
+</div>
+</div>
+
+</body>
+</html>
