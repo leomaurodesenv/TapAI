@@ -118,7 +118,7 @@ TapAIGame.prototype = {
 	/* End: Statistics */
 	end:function(){
 		console.log('-> End');
-		this.layout.end(this.game.round, this.reaction.best, this.reaction.worse, this.points.score);
+		this.layout.end(this.game.round-1, this.reaction.best, this.reaction.worse, this.points.score);
 		this.toFile.save();
 	},
 	/* Analysis reaction */
