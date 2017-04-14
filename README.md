@@ -14,7 +14,7 @@ After 10 matches the result of the game appears and a CSV file with all the game
 ___
    
    
-This game has been developed with purpose of studying human-game interaction. In this game it is possible to manipulate any information of the game in order to interact and to study the behaviors and actions of the player. In addition, this game can be used to develop a database of players and their game states (at the end of the game a CSV file is generated).
+This game has been developed with the purpose of studying human-game interaction. In this game, it is possible to manipulate any information about the game in order to interact and to study the behaviors and actions of the player. In addition, this game can be used to develop a database of players and their game states (at the end of the game a CSV file is generated).
    
 ___
    

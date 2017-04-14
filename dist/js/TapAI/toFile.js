@@ -1,6 +1,14 @@
 /**
- * Game CSV saver
-
+ * toFile
+ * This function save in CSV the matches of game TapAI
+ *
+ * @author Leonardo Mauro <leo.mauro.desenv@gmail.com>
+ * @link http://leonardomauro.com/portfolio/ Portfolio of Leonardo Mauro
+ * @version 2.0.0
+ * @copyright 2016 Leonardo Mauro
+ * @license https://opensource.org/licenses/GPL-2.0 GNU Public License (GPL v2)
+ * @package TapAI
+ * @access public
  */
 
 function toFile(){
@@ -16,7 +24,14 @@ function toFile(){
 }
 
 toFile.prototype = {
-	/* Add TapAI Statistics*/
+	/**
+	 * Add TapAI Statistics
+	 * @access public
+	 * @param	{Json} game		Game infos
+	 * @param	{Json} reaction	Reaction infos
+	 * @param	{Json} points	Points infos
+	 * @returns	void
+	 */
 	add:function(game, reaction, points){
 		var newRow = {
 			'game':JSON.parse(JSON.stringify(game)),
@@ -25,7 +40,12 @@ toFile.prototype = {
 		};
 		this.rows.push(newRow);
 	},
-	/* Save CSV */
+	/**
+	 * Save CSV
+	 * Create the CSV file and add all this.rows data
+	 * @access public
+	 * @returns	void
+	 */
 	save:function(){
 		var str = 'game.round,game.difficult,game.time,game.trap,reaction.click,reaction.best,reaction.worse,points.score,points.error\n';
 		for(var i=0; i<this.rows.length; i++){

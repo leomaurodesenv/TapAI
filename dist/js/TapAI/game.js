@@ -18,6 +18,13 @@ function TapAI(ielement){
 	window.tapAI = new TapAIGame(ielement);
 }
 
+/**
+ * Game Executor
+ * @access public
+ * @param	{String} ielement	SVG element {id}.
+ * @returns	void
+ */
+
 function TapAIGame(ielement){
 	// Defines
 	this.maxError = 3;
@@ -33,7 +40,7 @@ function TapAIGame(ielement){
 	
 	// Call external functions
 	this.layout = new TapAILayout('tapAI', ielement);
-	this.logic = new TapAILogic(this.maxDifficulty, this.maxRound);
+	this.logic = new TapAILogic(this.maxDifficulty, this.maxRound, this.maxReaction);
 	this.toFile = new toFile(); // Only to save CSV
 	
 	// Draw Init Layout
@@ -41,14 +48,24 @@ function TapAIGame(ielement){
 }
 
 TapAIGame.prototype = {
-	/* Start the game */
+	/**
+	 * Start the Game
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 *//* Start the game */
 	start:function(){
 		// Begin
 		this.reset();
 		this.game.time = 3000;
 		this.layout.beginning();
 	},
-	/* Waiting x time (seconds) */
+	/**
+	 * Waiting to show the "Tap"
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	waiting:function(){
 		this.layout.waiting();
 		var $this = this;
@@ -57,7 +74,12 @@ TapAIGame.prototype = {
 			$this.clock.date = new Date();
 		}, this.game.time);
 	},
-	/* Check tap and trap */
+	/**
+	 * Call Tap & Trap screen
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	tap:function(){
 		// Trap 2x, 4x, 6x,
 		if(this.game.trap){
@@ -68,7 +90,12 @@ TapAIGame.prototype = {
 		// Normal tap
 		else this.layout.tap(0);
 	},
-	/* Click early or click in *Trap* */
+	/**
+	 * Error - Click early or click in *Trap*
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	error:function(){
 		// Setting datas of event error
 		clearInterval(this.clock.waiting);
@@ -77,7 +104,12 @@ TapAIGame.prototype = {
 		// Layout
 		this.layout.error();
 	},
-	/* Click event */
+	/**
+	 * Click (reaction event)
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	click:function(){
 		// Get miliseconds
 		var nowdate = new Date(), milisecond;
@@ -88,7 +120,12 @@ TapAIGame.prototype = {
 		// Layout
 		this.layout.showReaction(milisecond);
 	},
-	/* Update reaction */
+	/**
+	 * Update data of this.reaction
+	 * @access public
+	 * @param	{Number} milisecond	time reaction
+	 * @returns	void
+	 *//* Update reaction */
 	updateReaction:function(milisecond){
 		// Update reaction
 		if(isNaN(this.reaction.best) || milisecond < this.reaction.best)
@@ -97,10 +134,15 @@ TapAIGame.prototype = {
 			this.reaction.worse = milisecond;
 		this.reaction.click = milisecond;
 	},
-	/* Analysis reaction */
+	/**
+	 * Analysis the reaction
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	analysis:function(){
 		// Execute logic game
-		var aScore = this.logic.score(this.game, this.reaction.click, this.maxReaction);
+		var aScore = this.logic.score(this.game, this.reaction.click);
 		var logic = this.logic.execute(this.game);
 		// Update values
 		this.points.score = Math.round10(aScore + this.points.score, -2);
@@ -115,13 +157,23 @@ TapAIGame.prototype = {
 		else if(this.points.error >= this.maxError) this.layout.gameOver(); // end game
 		else this.waiting(); // continue
 	},
-	/* End: Statistics */
+	/**
+	 * End: Statistics
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	end:function(){
 		console.log('-> End');
 		this.layout.end(this.game.round-1, this.reaction.best, this.reaction.worse, this.points.score);
 		this.toFile.save();
 	},
-	/* Analysis reaction */
+	/**
+	 * Print CSV file
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	printCSV:function(){
 		console.log('*-------------------*');
 		console.debug(this.game);
@@ -130,7 +182,12 @@ TapAIGame.prototype = {
 		// Only to save CSV
 		this.toFile.add(this.game, this.reaction, this.points);
 	},
-	/* Reset game values */
+	/**
+	 * Reset game values
+	 * @access public
+	 * @param	void
+	 * @returns	void
+	 */
 	reset:function(){
 		this.game = {'round':1, 'difficult':1, 'time':3000, 'trap':false};
 		this.reaction = {'click':0, 'best':NaN, 'worse':NaN};
