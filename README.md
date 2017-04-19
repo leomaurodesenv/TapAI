@@ -19,6 +19,7 @@ This game has been developed with the purpose of studying human-game interaction
 ___
    
 * Normal Game   
+
 ```
 /dist/js/TapAI/
   |__ game.js - mechanics of the game
@@ -30,6 +31,7 @@ ___
 ```
     
 * Edited Game	
+
 ```
 /dist/js/TapAI/
   |__ AIlogic.js - game logic (with PCG heuristic elo-based)
