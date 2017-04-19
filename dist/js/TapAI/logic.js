@@ -26,7 +26,7 @@ TapAILogic.prototype = {
 	 * @param	{Json} game		Game infos
 	 * @returns	{Json} configures of new match
 	 */
-	execute:function(game){
+	execute:function(game, reaction){
 		// Analisy the game
 		var aDifficult, aTime, aTrap, out = {};
 		aDifficult = Math.ceil(game.round/(this.maxRound/this.maxDifficult));

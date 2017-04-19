@@ -3,6 +3,7 @@
 /* ---------------------------------------- */
 *{font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .well{margin:80px auto;padding:30px 15px;}
+h4{margin-top:0;}
 
 /* ---------------------------------------- */
 /* SVG */
@@ -40,55 +41,3 @@
 
 /* ---------------------------------------- */
 /* ---------------------------------------- */
-
-.tap-screen{width:100%;height:310px;border-radius:4px;cursor:pointer;display:inline-block;}
-.tap-screen-text{margin:0 auto;width:90%; font-size:large;}
-.bg-default{cursor:unset;background-color:#282828;}
-
-.tap-screen h3{font-size:40px;}
-.tap-screen h4{font-size:32px;}
-.tap-screen h5{font-size:20px;}
-
-.tap-screen>.tap{padding-top:100px;}
-.tap-screen>.trap{padding-top:100px;}
-.tap-screen.four-div{width:50%;height:155px;}
-.tap-screen.four-div h3{font-size:30px;}
-.tap-screen.four-div>.tap, 
-.tap-screen.four-div>.trap{padding-top:42px;}
-.tap-screen.nine-div{width:33.333%;height:103.333px;}
-.tap-screen.nine-div h3{font-size:20px;}
-.tap-screen.nine-div>.tap, 
-.tap-screen.nine-div>.trap{padding-top:22px;}
-
-/*.tap-screen.two-div h3{font-size:5vmin;}
-.tap-screen.four-div h3{font-size:4vmin;}*/
-
-.tap-screen>.continuing-time{padding-top:96px;}
-.tap-screen>.intial{padding-top:58px;}
-.tap-screen>.intial-start{padding-top:106px;}
-.tap-screen>.continuing{padding-top:106px;}
-.tap-screen>.wait{padding-top:72px;}
-.tap-screen>.danger{padding-top:86px;}
-.tap-screen>.gameover{padding-top:100px;}
-.tap-screen>.end{padding-top:30px;}
-
-@media (max-width: 500px){
-	.tap-screen h3{font-size:34px;}
-	.tap-screen h4{font-size:28px;}
-	.tap-screen h5{font-size:18px;}
-	
-	.tap-screen>.tap, .tap-screen>.trap, .tap-screen>.gameover{padding-top:106px;}
-	.tap-screen.four-div h3{font-size:22px;}
-	.tap-screen.four-div>.tap, 
-	.tap-screen.four-div>.trap{padding-top:46px;}
-	.tap-screen.nine-div h3{font-size:16px;}
-	.tap-screen.nine-div>.tap, 
-	.tap-screen.nine-div>.trap{padding-top:24px;}
-
-	.tap-screen>.continuing-time{padding-top:106px;}
-	.tap-screen>.intial{padding-top:68px;}
-	.tap-screen>.intial-start, .tap-screen>.continuing{padding-top:116px;}	
-	.tap-screen>.wait, .tap-screen>.danger{padding-top:72px;}
-	.tap-screen>.end{padding-top:38px;}
-	
-}

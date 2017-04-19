@@ -143,7 +143,7 @@ TapAIGame.prototype = {
 	analysis:function(){
 		// Execute logic game
 		var aScore = this.logic.score(this.game, this.reaction.click);
-		var logic = this.logic.execute(this.game);
+		var logic = this.logic.execute(this.game, this.reaction.click);
 		// Update values
 		this.points.score = Math.round10(aScore + this.points.score, -2);
 		this.printCSV();
