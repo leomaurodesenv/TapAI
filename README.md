@@ -18,14 +18,26 @@ This game has been developed with the purpose of studying human-game interaction
    
 ___
    
+* Normal Game   
 ```
 /dist/js/TapAI/
   |__ game.js - mechanics of the game
   |__ layout.js - SVG HTML layout
   |__ logic.js - difficulty/score logic
   |__ toFile.js - export the results to CSV file
+/example/
+  |__ index.html - normal game
 ```
     
+* Edited Game	
+```
+/dist/js/TapAI/
+  |__ AIlogic.js - game logic (with PCG heuristic elo-based)
+/example/
+  |__ index-intelligent.html - edited game
+```
+    
+	
 ___
    
 ## Also look ~  	
