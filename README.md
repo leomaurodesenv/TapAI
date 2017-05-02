@@ -1,15 +1,17 @@
 # TapAI #
 
 Links:      
-[Github](https://github.com/leomaurodesenv/TapAI)   
+[Online Example](http://projects.leonardomauro.com/tapai/) and [JS Classes](https://www.jsclasses.org/tapai)   
    
 ___
    
 This is a quick reaction game in which the player must click as fast as possible on the "tap" screen.   
-
+   
 The game is designed in SVG (HTML5) responsively to fit any size of screen. Designed for web browsers to desktop, mobile phones and tablets.   
-
+   
 After 10 matches the result of the game appears and a CSV file with all the game information is saved.   
+   
+The examples debug the player performance in Web Console of browser.
    
 ___
    
