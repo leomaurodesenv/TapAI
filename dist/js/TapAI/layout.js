@@ -27,7 +27,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	init:function(){
-		var htmlLayout = "<text class=\"center\" y=\"120\"><tspan class=\"title color-white\" x=\"0\" text-anchor=\"middle\">TapAI!</tspan><tspan class=\"color-gray\" x=\"0\" dy=\"40\" text-anchor=\"middle\">Teste sua velocidade</tspan></text><g class=\"btn-init center\" onClick=\""+this.game+".start()\"><rect x=\"-55\" y=\"180\" width=\"110\" height=\"40\" rx=\"10\" ry=\"10\"/><text y=\"205\" text-anchor=\"middle\">Começar</text></g>";
+		var htmlLayout = "<text x=\"50%\" text-anchor=\"middle\" class=\"title color-white\" y=\"120\">TapAI!</text><text x=\"50%\" class=\"color-gray\" text-anchor=\"middle\" y=\"160\">Teste sua velocidade</text><g class=\"btn-init\" onClick=\""+this.game+".start()\"><rect x=\"50%\" text-anchor=\"middle\" y=\"180\" width=\"110\" height=\"40\" rx=\"10\" ry=\"10\" class=\"center-rect\"/><text y=\"205\" x=\"50%\" text-anchor=\"middle\">Começar</text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -37,7 +37,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	beginning:function(){
-		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".waiting()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"140\" text-anchor=\"middle\"><tspan class=\"color-white\" x=\"0\">Clique para</tspan><tspan class=\"color-white\" x=\"0\" dy=\"40\">Começar !</tspan></text></g>";
+		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".waiting()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" y=\"140\" text-anchor=\"middle\" class=\"color-white\">Clique para</text><text x=\"50%\" y=\"180\" text-anchor=\"middle\" class=\"color-white\">Começar !</tspan></text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -47,7 +47,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	waiting:function(){
-		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".error()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"50%\" text-anchor=\"middle\"><tspan class=\"color-white\" x=\"0\">Espere &#8987;</tspan></text></g>";
+		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".error()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" text-anchor=\"middle\" y=\"50%\" class=\"color-white\">Espere &#8987;</text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -57,7 +57,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	error:function(){
-		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".analysis()\"><rect class=\"color-orange\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"120\"><tspan class=\"color-white\" x=\"0\" text-anchor=\"middle\">&#10007; Calma &#10007;</tspan></text><text class=\"center\" y=\"155\"><tspan class=\"small color-white\" x=\"0\" text-anchor=\"middle\">Não tenha pressa..</tspan></text><text class=\"center\" y=\"185\"><tspan class=\"smaller color-white\" x=\"0\" text-anchor=\"middle\">Clique para continuar</tspan></text></g>";
+		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".analysis()\"><rect class=\"color-orange\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" text-anchor=\"middle\" class=\"color-white\" y=\"120\">&#10007; Calma &#10007;</text><text x=\"50%\" text-anchor=\"middle\" class=\"small color-white\" y=\"155\">Não tenha pressa..</text><text x=\"50%\" text-anchor=\"middle\" class=\"smaller color-white\" y=\"185\">Clique para continuar</text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -69,7 +69,7 @@ TapAILayout.prototype = {
 	tap:function(screen){
 		var htmlLayout = "";
 		if(screen == 0){ // No trap
-			htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".click()\"><rect class=\"color-blue\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"50%\" text-anchor=\"middle\"><tspan class=\"color-white\" x=\"0\">&raquo; Tap &laquo;</tspan></text></g>";
+			htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".click()\"><rect class=\"color-blue\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" text-anchor=\"middle\" class=\"color-white\" y=\"50%\">&raquo; Tap &laquo;</text></g>";
 		}
 		else{
 			var textTap = '&raquo; Tap &laquo;', colorTap = 'blue', eventTap = 'click',
@@ -120,7 +120,7 @@ TapAILayout.prototype = {
 	 * @returns	{String} Dom HTML
 	 */
 	getTapTrap:function(onClick, color, x, y, width, height, center, tY, txt){
-		return "<g class=\"screen-click\" onClick=\""+this.game+"."+onClick+"()\"><rect class=\"color-"+color+"\" x=\""+x+"\" y=\""+y+"\" width=\""+width+"\" height=\""+height+"\" rx=\"10\" ry=\"10\"/><text class=\"center-"+center+"\" y=\""+tY+"\" text-anchor=\"middle\"><tspan class=\"color-white\" x=\"0\">"+txt+"</tspan></text></g>";
+		return "<g class=\"screen-click\" onClick=\""+this.game+"."+onClick+"()\"><rect class=\"color-"+color+"\" x=\""+x+"\" y=\""+y+"\" width=\""+width+"\" height=\""+height+"\" rx=\"10\" ry=\"10\"/><text x=\""+center+"%\" text-anchor=\"middle\" class=\"color-white\" y=\""+tY+"\">"+txt+"</text></g>";
 	},
 	/**
 	 * Show time in miliseconds - Layout
@@ -129,7 +129,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	showReaction:function(time){
-		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".analysis()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"140\"><tspan class=\"color-white\" x=\"0\" text-anchor=\"middle\">&#9656; "+time+" ms &#9666;</tspan></text><text class=\"center\" y=\"175\"><tspan class=\"small color-white\" x=\"0\" text-anchor=\"middle\">Clique para continuar</tspan></text></g>";
+		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".analysis()\"><rect class=\"color-green\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" text-anchor=\"middle\" class=\"color-white\" y=\"140\">&#9656; "+time+" ms &#9666;</text><text x=\"50%\" text-anchor=\"middle\" class=\"small color-white\" y=\"175\">Clique para continuar</text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -139,7 +139,7 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	gameOver:function(){
-		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".end()\"><rect class=\"color-red\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text class=\"center\" y=\"140\"><tspan class=\"color-white\" x=\"0\" text-anchor=\"middle\">&#10008; Fim &#10008;</tspan></text><text class=\"center\" y=\"170\"><tspan class=\"smaller color-white\" x=\"0\" text-anchor=\"middle\">Clique para continuar</tspan></text></g>";
+		var htmlLayout = "<g class=\"screen-click\" onClick=\""+this.game+".end()\"><rect class=\"color-red\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" rx=\"10\" ry=\"10\"/><text x=\"50%\" text-anchor=\"middle\" class=\"color-white\" y=\"140\">&#10008; Fim &#10008;</text><text x=\"50%\" text-anchor=\"middle\" class=\"smaller color-white\" y=\"170\">Clique para continuar</text></g>";
 		this.svg.innerHTML = htmlLayout;
 	},
 	/**
@@ -152,7 +152,8 @@ TapAILayout.prototype = {
 	 * @returns	{Dom} SVG Layout
 	 */
 	end:function(round, best, worse, score){
-		var htmlLayout = "<text class=\"center\" y=\"60\"><tspan class=\"title color-white\" x=\"0\" text-anchor=\"middle\">TapAI!</tspan><tspan class=\"color-gray\" x=\"0\" dy=\"50\" text-anchor=\"middle\">Rodadas: "+round+"</tspan><tspan class=\"color-gray\" x=\"0\" dy=\"30\" text-anchor=\"middle\">Melhor: "+best+" ms</tspan><tspan class=\"color-gray\" x=\"0\" dy=\"30\" text-anchor=\"middle\">Pior: "+worse+" ms</tspan><tspan class=\"color-gray\" x=\"0\" dy=\"30\" text-anchor=\"middle\">Pontos: "+score+"</tspan></text><g class=\"btn-init center\" onClick=\""+this.game+".start()\"><rect x=\"-55\" y=\"230\" width=\"110\" height=\"40\" rx=\"10\" ry=\"10\"/><text y=\"255\" text-anchor=\"middle\">Denovo ?</text></g>";
+		var htmlLayout = "<text x=\"50%\" text-anchor=\"middle\" class=\"title color-white\" y=\"60\">TapAI!</text><text x=\"50%\" text-anchor=\"middle\" class=\"color-gray\" y=\"110\">Rodadas: "+round+"</text><text x=\"50%\" text-anchor=\"middle\" class=\"color-gray\" y=\"140\">Melhor: "+best+" ms</text><text x=\"50%\" text-anchor=\"middle\" class=\"color-gray\" y=\"170\">Pior: "+worse+" ms</text><text x=\"50%\" text-anchor=\"middle\" class=\"color-gray\" y=\"200\">Pontos: "+score+"</text><g class=\"btn-init\" onClick=\""+this.game+".start()\"><rect x=\"50%\" text-anchor=\"middle\" y=\"230\" width=\"110\" height=\"40\" rx=\"10\" ry=\"10\" class=\"center-rect\"/><text y=\"255\" x=\"50%\" text-anchor=\"middle\">De novo</text></g>";
+		
 		this.svg.innerHTML = htmlLayout;
 	}
 }
