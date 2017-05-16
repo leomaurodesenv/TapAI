@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>TapAI!</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../assets/js/jquery-1.12.3.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- Math functions -->
+<script src="../assets/js/math/random.js"></script>
+<script src="../assets/js/math/round.js"></script>
+
+<!-- TapAI Game -->
+<script src="../dist/js/TapAI/3-ihc-brasil-2015/layout.js"></script>
+<script src="../dist/js/TapAI/3-ihc-brasil-2015/logic.js"></script>
+<script src="../dist/js/TapAI/3-ihc-brasil-2015/game.js"></script>
+
+<!-- To Save CSV -->
+<script src="../assets/js/FileSaver.min.js"></script>
+<script src="../dist/js/TapAI/3-ihc-brasil-2015/toFile.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<div class="row">
+<div class="col-sm-offset-3 col-sm-6">
+<div class="well">
+	
+	<h4>TapAI: IHC Brasil Tests</h4>
+	<p>This game is used to eye tracking analysis.</p>
+
+	<svg id="tap-game"></svg>
+
+	<p class="footer">Projected by <a href="http://leonardomauro.com/" target="_blank" data-toggle="tooltip" title="My Website">Leonardo Mauro</a> - <a href="https://github.com/leomaurodesenv/TapAI" target="_blank" data-toggle="tooltip" title="GitHub repository">GitHub</a></p>
+	
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+var tapelement = document.getElementById('tap-game');
+var game = new TapAI(tapelement);
+
+</script>
+
+</div>
+</body>
+</html>
