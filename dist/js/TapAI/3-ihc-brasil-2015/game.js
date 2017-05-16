@@ -29,7 +29,7 @@ function TapAIGame(ielement){
 	// Defines
 	this.maxError = 3;
 	this.maxReaction = 5000;
-	this.maxRound = 2;
+	this.maxRound = 8;
 	this.maxDifficulty = 4;
 	
 	// Game vars
